@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 3.27)
-project(course_work_code)
+project(course)
 
 set(CMAKE_CXX_STANDARD 17)
-
-add_executable(course_work_code main.cpp)
+find_package(SFML 2.6.1 COMPONENTS graphics audio)
+add_executable(course main.cpp
+        state_managment/state_stack/StateStack.cpp
+        state_managment/state_stack/StateStack.h
+        state_managment/state/State.cpp
+        state_managment/state/State.h
+        state_managment/StatesEnum.h)
+target_link_libraries(course sfml-graphics)
