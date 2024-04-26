@@ -8,5 +8,9 @@ add_executable(course main.cpp
         state_managment/state_stack/StateStack.h
         state_managment/state/State.cpp
         state_managment/state/State.h
-        state_managment/StatesEnum.h)
+        state_managment/StatesEnum.h
+        resource_managment/TextureHolder/ResourceHolder.cpp
+        resource_managment/TextureHolder/ResourceHolder.h
+        resource_managment/Textures.h
+        resource_managment/Fonts.h)
 target_link_libraries(course sfml-graphics)

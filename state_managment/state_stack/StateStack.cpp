@@ -37,7 +37,8 @@ bool StateStack::isEmpty() {
 }
 
 State::Ptr StateStack::createState(States::ID stateId) {
-    return nullptr;
+    auto found = mFactories.find(stateId);
+    return found->second();
 }
 
 void StateStack::applyPendingChanges() {
@@ -46,5 +47,7 @@ void StateStack::applyPendingChanges() {
 
 template<class T>
 void StateStack::registerState(States::ID stateId) {
-    mFactories[stateId]
+    mFactories[stateId] = [this] () {
+        return State::Ptr(new T(*this, mContext));
+    };
 }

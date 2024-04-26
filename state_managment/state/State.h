@@ -2,14 +2,21 @@
 #define COURSE_STATE_H
 
 #include <memory>
+#include <SFML/Graphics/RenderWindow.hpp>
 #include "../state_stack/StateStack.h"
+#include "../../resource_managment/TextureHolder/ResourceHolder.h"
+#include "../../resource_managment/Fonts.h"
 
+class Font;
 
 class State {
 public:
     typedef std::unique_ptr<State> Ptr;
     struct Context {
-        //todo
+        sf::RenderWindow*	                            window;
+        ResourceHolder<Textures::ID, sf::Texture>*		textures;
+        ResourceHolder<Fonts::ID, Font>*			        fonts;
+        //Player                                        player;
     };
 
     State(StateStack& stack, Context context);
