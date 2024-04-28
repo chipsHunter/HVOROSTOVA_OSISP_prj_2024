@@ -8,6 +8,7 @@
 namespace Textures {
     enum ID {
         //todo
+        BULLET
     };
 }
 

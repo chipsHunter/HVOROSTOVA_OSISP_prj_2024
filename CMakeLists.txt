@@ -12,5 +12,13 @@ add_executable(course main.cpp
         resource_managment/TextureHolder/ResourceHolder.cpp
         resource_managment/TextureHolder/ResourceHolder.h
         resource_managment/Textures.h
-        resource_managment/Fonts.h)
+        resource_managment/Fonts.h
+        player_managment/player/Player.cpp
+        player_managment/player/Player.h
+        entity_managment/Entity/Entity.cpp
+        entity_managment/Entity/Entity.h
+        entity_managment/Bullet/Bullet.cpp
+        entity_managment/Bullet/Bullet.h
+        entity_managment/SceneNode.cpp
+        entity_managment/SceneNode.h)
 target_link_libraries(course sfml-graphics)

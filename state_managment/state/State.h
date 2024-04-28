@@ -16,7 +16,7 @@ public:
         sf::RenderWindow*	                            window;
         ResourceHolder<Textures::ID, sf::Texture>*		textures;
         ResourceHolder<Fonts::ID, Font>*			        fonts;
-        //Player                                        player;
+        Player                                        player;
     };
 
     State(StateStack& stack, Context context);
