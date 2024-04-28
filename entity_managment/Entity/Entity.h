@@ -9,13 +9,11 @@
 
 class Entity: public SceneNode{
     coordinate coordinates;
-    //int hp;
-//    enum entity_type {
-//        BULLET = 1 << 1,
-//        PLAYER = 1 << 2
-//    };
 public:
-    explicit Entity(entity _entity);
-    virtual Textures::ID getResource() = 0;
+    Entity();
+
+private:
+    void updateCurrent(coordinate _coordinate) override;
+    //virtual Textures::ID  getResource() = 0;
 };
 #endif //COURSE_ENTITY_H

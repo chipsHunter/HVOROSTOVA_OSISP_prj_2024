@@ -9,6 +9,8 @@
 #include <SFML/Graphics/Transformable.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/System/NonCopyable.hpp>
+#include <SFML/System/Time.hpp>
+#include "sever_structures.h"
 
 class SceneNode: public sf::Transformable,
         public sf::Drawable,
@@ -21,10 +23,15 @@ public:
 
     void            addChild(SceneNodePtr child);
     SceneNodePtr    detachChild(const SceneNode& child);
+    void            update(coordinate _coordinate);
 
 private:
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
-    virtual void drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+    void            draw(sf::RenderTarget& target, sf::RenderStates states) const override;
+    virtual void    drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
+
+    virtual void    updateCurrent(coordinate _coordinate);
+    void            updateChildren(coordinate _coordinate);
+
 
 private:
     std::vector<SceneNodePtr>   childSceneNodes;

@@ -27,5 +27,18 @@ void SceneNode::draw(sf::RenderTarget &target, sf::RenderStates states) const {
 }
 
 void SceneNode::drawCurrent(sf::RenderTarget &target, sf::RenderStates states) const {
-    //todo
+    //  will be overloaded
+}
+
+void SceneNode::update(coordinate _coordinate) {
+    updateCurrent(_coordinate);
+    updateChildren(_coordinate);
+}
+void SceneNode::updateCurrent(coordinate _coordinate) {
+    //  will be overloaded
+}
+void SceneNode::updateChildren(coordinate _coordinate) {
+    for (SceneNodePtr& ptr: childSceneNodes) {
+        ptr->update(_coordinate);
+    }
 }
