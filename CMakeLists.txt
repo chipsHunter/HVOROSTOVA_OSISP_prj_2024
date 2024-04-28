@@ -20,5 +20,10 @@ add_executable(course main.cpp
         entity_managment/Bullet/Bullet.cpp
         entity_managment/Bullet/Bullet.h
         entity_managment/SceneNode.cpp
-        entity_managment/SceneNode.h)
+        entity_managment/SceneNode.h
+        EntityType.h
+        command/Command.cpp
+        command/Command.h
+        command/CommandQueue.cpp
+        command/CommandQueue.h)
 target_link_libraries(course sfml-graphics)

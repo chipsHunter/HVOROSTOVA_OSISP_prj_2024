@@ -2,8 +2,12 @@
 #define COURSE_PLAYER_H
 
 
-class Player {
+#include "../../entity_managment/Entity/Entity.h"
+
+class Player: public Entity{
     bool isActive;
+    int hp;
+
 };
 
 
